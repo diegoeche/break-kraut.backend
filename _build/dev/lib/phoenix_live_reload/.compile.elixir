@@ -1,0 +1,21 @@
+v1.
+{<<"/Users/wooga/Games/break-kraut.backend/_build/dev/lib/phoenix_live_reload/ebin/Elixir.Phoenix.LiveReloader.Socket.beam">>,
+ 'Elixir.Phoenix.LiveReloader.Socket',<<"lib/phoenix_live_reload/socket.ex">>,
+ ['Elixir.Kernel','Elixir.Phoenix.Socket','Elixir.Module',
+  'Elixir.Phoenix.Transports.LongPoll','Elixir.Phoenix',
+  'Elixir.Phoenix.Transports.WebSocket'],
+ [],[],nil}.
+{<<"/Users/wooga/Games/break-kraut.backend/_build/dev/lib/phoenix_live_reload/ebin/Elixir.Phoenix.LiveReload.Channel.beam">>,
+ 'Elixir.Phoenix.LiveReload.Channel',<<"lib/phoenix_live_reload/channel.ex">>,
+ ['Elixir.Kernel','Elixir.Phoenix.Socket','Elixir.Module',
+  'Elixir.Phoenix.Channel'],
+ [erlang,'Elixir.Path','Elixir.Access','Elixir.String.Chars',fs,
+  'Elixir.String','Elixir.Enum','Elixir.Application'],
+ [],nil}.
+{<<"/Users/wooga/Games/break-kraut.backend/_build/dev/lib/phoenix_live_reload/ebin/Elixir.Phoenix.LiveReloader.beam">>,
+ 'Elixir.Phoenix.LiveReloader',<<"lib/phoenix_live_reload/live_reloader.ex">>,
+ ['Elixir.Plug.Conn','Elixir.Kernel','Elixir.Module','Elixir.File',
+  'Elixir.Plug','Elixir.Application'],
+ [erlang,'Elixir.Path','Elixir.Map','Elixir.Access','Elixir.String.Chars',
+  'Elixir.String','Elixir.Enum'],
+ [],nil}.
