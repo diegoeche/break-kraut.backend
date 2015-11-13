@@ -14,13 +14,9 @@ defmodule Backend.Router do
   end
 
   scope "/", Backend do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :browser
 
     get "/", PageController, :index
+    resources "/users", UserController
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", Backend do
-  #   pipe_through :api
-  # end
 end
