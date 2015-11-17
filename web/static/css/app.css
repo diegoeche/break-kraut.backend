@@ -78,3 +78,12 @@ form.link, form.button {
     border-bottom: 0;
   }
 }
+
+.frame {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.game {
+    width: 100%;
+}

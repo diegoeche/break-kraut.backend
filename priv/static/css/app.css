@@ -79,5 +79,14 @@ form.link, form.button {
   }
 }
 
+.frame {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.game {
+    width: 100%;
+}
+
 
 /*# sourceMappingURL=app.css.map*/
