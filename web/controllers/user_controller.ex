@@ -1,6 +1,5 @@
 defmodule Backend.UserController do
   use Backend.Web, :controller
-
   alias Backend.User
 
   plug :scrub_params, "user" when action in [:create, :update]
@@ -42,7 +41,6 @@ defmodule Backend.UserController do
   def update(conn, %{"id" => id, "user" => user_params}) do
     user = Repo.get!(User, id)
     changeset = User.changeset(user, user_params)
-
     case Repo.update(changeset) do
       {:ok, user} ->
         conn

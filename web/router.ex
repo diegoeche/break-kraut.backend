@@ -20,13 +20,17 @@ defmodule Backend.Router do
     password: System.get_env("ADMIN_SECRET")
   end
 
+  scope "/api", Backend do
+    pipe_through :api
+    get "/user/:id", ApiController, :get_user
+    post "/user/:id", ApiController, :update_score
+    get "/ranking", ApiController, :ranking
+  end
+
   scope "/", Backend do
     pipe_through :browser
-
     get "/", PageController, :index
-
     pipe_through :simple_auth
-
     resources "/users", UserController
   end
 end
