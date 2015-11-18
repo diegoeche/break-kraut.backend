@@ -6,12 +6,12 @@ defmodule Backend.UserControllerTest do
   @invalid_attrs %{}
 
   setup do
-    conn = conn()
+    conn = conn() |> put_req_header("authorization", "Basic " <> Base.encode64("admin:"))
     {:ok, conn: conn}
   end
 
   test "lists all entries on index", %{conn: conn} do
-    conn = get conn, user_path(conn, :index)
+    conn = conn |> get(user_path(conn, :index))
     assert html_response(conn, 200) =~ "Listing users"
   end
 

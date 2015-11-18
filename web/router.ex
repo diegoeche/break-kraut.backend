@@ -13,10 +13,20 @@ defmodule Backend.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :simple_auth do
+    plug BasicAuth,
+    realm: "Admin Area",
+    username: "admin",
+    password: System.get_env("ADMIN_SECRET")
+  end
+
   scope "/", Backend do
     pipe_through :browser
 
     get "/", PageController, :index
+
+    pipe_through :simple_auth
+
     resources "/users", UserController
   end
 end
