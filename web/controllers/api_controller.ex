@@ -3,6 +3,21 @@ defmodule Backend.ApiController do
   alias Backend.User
   import Ecto.Query
 
+  def register(conn, %{"name" => name}) do
+    changeset = User.changeset(
+      %User{},
+      %{
+        "name" => name,
+        "points" => 0,
+      }
+    )
+    case Repo.insert(changeset) do
+      {:ok, user} ->
+        render(conn, "get_user.json", data: user)
+      _ -> ;
+    end
+  end
+
   def get_user(conn, %{"id" => id}) do
     user = Repo.get!(User, id)
     render(conn, "get_user.json", data: user)
@@ -10,7 +25,8 @@ defmodule Backend.ApiController do
 
   def update_score(conn, %{"id" => id, "new_score" => new_score}) do
     user = Repo.get!(User, id)
-    case (user.points <= new_score) do
+    {int_score, _} = Integer.parse(new_score)
+    case (user.points <= int_score) do
       true ->
         {:ok, user} = Repo.update(User.changeset(user, %{:points => new_score}))
       _ -> ;

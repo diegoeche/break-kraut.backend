@@ -25,6 +25,7 @@ defmodule Backend.Router do
     get "/user/:id", ApiController, :get_user
     post "/user/:id", ApiController, :update_score
     get "/ranking", ApiController, :ranking
+    post "/register", ApiController, :register
   end
 
   scope "/", Backend do

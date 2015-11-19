@@ -25,4 +25,22 @@
            PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"></EMBED>
   </OBJECT>
   </div>
+
+  <script type='text/javascript'>
+    window.getUser = function () {
+      return localStorage.getItem("break-kraut.userId");
+    }
+
+    window.createNewUserIfNotNew = function () {
+      if(getUser() === null) {
+        console.info("Creating new user");
+        var name = window.prompt("Name?");
+        $.post("/api/register", { "name": name }, function (data) {
+          localStorage.setItem("break-kraut.userId", data.id);
+          console.info("User Created with: " + data.id);
+        }, "json");
+      }
+    }
+    createNewUserIfNotNew();
+  </script>
 </div>
