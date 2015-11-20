@@ -38,7 +38,7 @@ defmodule Backend.ApiController do
     # Macro magic from ecto
     ranking =
       User
-      |> limit([u], 10)
+      |> limit([u], 5)
       |> order_by([u], desc: u.points)
       |> Repo.all
     render(conn, "ranking.json", data: ranking)
